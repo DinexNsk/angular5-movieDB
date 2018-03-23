@@ -1,0 +1,36 @@
+<mat-card style="background-color:rgb(255, 136, 0);">
+    <mat-card-content>
+      <mat-grid-list cols="4" rowHeight="400px" gutterSize="30px" class="movieList">
+        <mat-grid-tile *ngFor="let movie of movies" 
+          class="movie" 
+          (click)="goDetail(movie.id)">     
+          <img *ngIf="movie.poster_path" src="{{imagePath}}{{movie.poster_path}}" class="img">
+          <img *ngIf="!movie.poster_path" src="https://placehold.it/500x740" class="img">
+          <ng-container *ngIf="!idArray.includes(movie.id)" (click)="selectEmployeeFromList($event)">
+              <mat-icon class="glyphiconFalse" 
+                (click)="selectEmployeeFromList($event)"
+                (click)="addFavorite(movie.id, movie.title, movie.poster_path)"
+                ion-stop-event="">
+                star
+              </mat-icon>
+          </ng-container>
+          <ng-container *ngIf="idArray.includes(movie.id)">
+            <mat-icon class="glyphiconTrue" 
+              (click)="selectEmployeeFromList($event)"
+              (click)="removeFavorites(movie.id, movie.title, movie.poster_path)">
+              star
+            </mat-icon>
+          </ng-container>
+          <mat-grid-tile-footer class="footer">
+            <ng-container *ngFor="let genreId of movie.genre_ids">
+              <ng-container  *ngFor = "let genre of genres" >
+                <div *ngIf="genreId == genre.id">
+                  <span class="capitalise">{{genre.name}}</span>
+                </div>
+              </ng-container>
+            </ng-container>
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>

@@ -1,0 +1,77 @@
+{
+    "adult": false,
+    "backdrop_path": "/lI3qV4kiSg0BvE6gelzV0tPAoFK.jpg",
+    "belongs_to_collection": null,
+    "budget": 140000000,
+    "genres": [
+        {
+            "id": 28,
+            "name": "боевик"
+        },
+        {
+            "id": 53,
+            "name": "триллер"
+        },
+        {
+            "id": 878,
+            "name": "фантастика"
+        },
+        {
+            "id": 12,
+            "name": "приключения"
+        }
+    ],
+    "homepage": "",
+    "id": 95,
+    "imdb_id": "tt0120591",
+    "original_language": "en",
+    "original_title": "Armageddon",
+    "overview": "Тень гигантского астероида легла на Землю. До рокового столкновения остаются считанные дни. Наступает Армагеддон, трагический финал мировой истории. Чтобы предотвратить катастрофу, необходимо чудо — или совместные усилия лучших из лучших вместе с технологической мощью всего созданного человеком. Сможет ли горстка людей противостоять вселенской стихии?..",
+    "popularity": 28.053412,
+    "poster_path": "/ubx925Ixm3MFh2aQxJpAV4CuG2T.jpg",
+    "production_companies": [
+        {
+            "id": 9195,
+            "logo_path": "/ou5BUbtulr6tIt699q6xJiEQTR9.png",
+            "name": "Touchstone Pictures",
+            "origin_country": ""
+        },
+        {
+            "id": 130,
+            "logo_path": null,
+            "name": "Jerry Bruckheimer Films",
+            "origin_country": ""
+        },
+        {
+            "id": 11533,
+            "logo_path": null,
+            "name": "Valhalla Motion Pictures",
+            "origin_country": ""
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "1998-07-01",
+    "revenue": 553799566,
+    "runtime": 144,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        },
+        {
+            "iso_639_1": "ru",
+            "name": "Pусский"
+        }
+    ],
+    "status": "Released",
+    "tagline": "Во имя любви. Во имя чести. Во имя Человечества",
+    "title": "Армагеддон",
+    "video": false,
+    "vote_average": 6.5,
+    "vote_count": 3106
+}

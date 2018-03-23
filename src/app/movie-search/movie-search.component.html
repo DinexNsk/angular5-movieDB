@@ -1,0 +1,14 @@
+<div class='container'>
+  <div class='itemsLeft'>
+    <input #searchBox 
+        type="search" 
+        (keyup.enter)="search(searchBox.value)"
+        placeholder="Search a movie">
+  <button (click)="search(searchBox.value)"> Искать </button>
+  </div>
+  <div class='itemsRight'>
+    <button [routerLink]="['/popular']"><mat-icon>home</mat-icon></button>
+    <button [routerLink]="['/favorite']">Избранное <mat-icon>star</mat-icon></button>
+    
+  </div>
+</div>

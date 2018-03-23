@@ -1,0 +1,157 @@
+.container{
+  margin-left:80px;
+  margin-right:80px;
+  margin-top:20px;
+  display: flex;
+  flex:1;
+  border-radius: 10px;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgba(248, 248, 248, 0.87);
+}
+.header{
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.title{
+  margin-bottom: 0;
+  text-align: center;
+}
+.subtitle{
+  width: auto;
+  text-align:center;
+}
+
+.detailContainer{
+  display: flex;
+  flex: 4;
+  flex-direction: row;
+}
+.imageLeft{
+  display:flex;
+  position: relative;
+  border-radius: 10px;
+  flex:1;
+  margin-right: 40px;
+}
+.imageLeft .glyphiconFalse {
+  position: absolute;
+  cursor: pointer;
+  border-width:2px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  top: 20px;
+  right: 0px;
+  color:white;
+}
+.imageLeft .glyphiconTrue {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 0px;
+  color:rgb(255, 238, 0);
+}
+
+.imageLeft img {
+  object-fit: fill;
+  background-size: cover;
+}
+.otherInfo{
+  display:flex;
+  flex:2;
+  flex-direction: column;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.infoContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.genreItems{
+  display: flex;
+  flex-direction: row; 
+  margin-bottom: 20px;
+}
+.genres {
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(255, 157, 0);
+  display: flex;
+  border-radius: 10px;
+}
+.description{
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+.otherDetails{
+  font-size: 18px;
+}
+.inline{
+  margin-bottom: 10px;
+}
+.inline span{
+  color:rgb(3, 160, 29);
+  font-size: 20px;
+}
+.similarTitle{
+  margin-bottom: 20px;
+  margin-top: 30px;
+  text-decoration: underline;
+  /* background-color: white; */
+  text-align: center;
+  margin-left:80px;
+  margin-right:80px;
+  font-size: 24px;
+}
+.movieList {
+  margin-right: 80px;
+  margin-left: 80px;
+  position: relative;
+}
+.movieList .glyphiconFalse {
+  position: absolute;
+  cursor: pointer;
+  border-width:2px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  top: 20px;
+  right: 0px;
+  color:white;
+}
+
+.movieList .glyphiconTrue {
+  position: absolute;
+  cursor: pointer;
+  top: 20px;
+  right: 0px;
+  color:rgb(255, 238, 0);
+}
+.movie{
+  border-radius: 10px;
+}
+
+.movieImg {
+  object-fit: fill;
+  min-width: 100%;
+  max-height: 100%;
+}
+
+mat-grid-tile-footer.footer{
+  height: 64px;
+  overflow-x: auto;
+}
+span.capitalise {
+  text-transform: capitalize;    
+  display: inherit;
+  font-size: small;
+  color: white;
+  padding: 0 5px;
+  position: relative;
+}

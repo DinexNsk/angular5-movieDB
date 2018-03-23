@@ -1,0 +1,19 @@
+<mat-card style="background-color:rgb(255, 136, 0);">
+    <mat-card-content>
+      <mat-grid-list cols="4" rowHeight="400px" gutterSize="30px" class="movieList">
+        <div class="movie">
+        <mat-grid-tile *ngFor="let movie of movies" (click)='goDetail(movie[0])'>     
+          <img src="{{imagePath}}{{movie[2]}}" class="movieImg">
+          <mat-icon class="glyphiconTrue" 
+          (click)="removeFavorites(movie[0], movie[1], movie[2])"
+          r>
+          star
+          </mat-icon>
+          <mat-grid-tile-footer class="footer">
+              {{movie[1]}}
+          </mat-grid-tile-footer>
+        </mat-grid-tile>
+      </div>
+      </mat-grid-list>
+    </mat-card-content>
+  </mat-card>
