@@ -15,6 +15,9 @@ export class MovieDetailsComponent implements OnInit {
   details: Detail;
   movies: Movie[];
   idArray = new Array();
+  currentPage: number = 1;
+    total_pages: number;
+  total_results: number;
   id: number;
   imagePath:string = 'http://image.tmdb.org/t/p/w500';
 
@@ -31,7 +34,7 @@ export class MovieDetailsComponent implements OnInit {
         this.id = +params['id'];
         this.getDetail(this.id);
     });
-    this.getSimilar(this.id);
+    this.getSimilar(this.id, this.currentPage);
     this.getFavorites();
   }
 
@@ -43,11 +46,12 @@ export class MovieDetailsComponent implements OnInit {
       }, error => console.log('error'));
   }
 
-  getSimilar(id:number){
-    this.movieService.getSimilarMovies(id)
+  getSimilar(id:number, page:number){
+    this.movieService.getSimilarMovies(id, page)
       .subscribe(result => {
         this.movies = result['results'];
-        console.log('Похожие фильмы',this.movies);
+        this.total_pages = result['total_pages'];
+        this.total_results = result['total_results'];
       }, error => console.log('error'));
   }
 
@@ -74,13 +78,20 @@ export class MovieDetailsComponent implements OnInit {
   getFavorites(){
     this.idArray = JSON.parse(localStorage.getItem('listOfIds')) || [];
   }
+  goNextOrPrevious(page:number){
+    this.currentPage += page;
+    this.getSimilar(this.id, this.currentPage)
+  }
+  
+  goStartOrEnd(page:number){
+    this.currentPage = page;
+    this.getSimilar(this.id, this.currentPage);
+  }
+
 
   selectEmployeeFromList(e) {
     e.stopPropagation();
     e.preventDefault();
-    console.log("This onClick method should prevent routerLink from executing.");
-
-    return false;
 }
 
 }
