@@ -13,15 +13,12 @@ import { Movie, Genre } from '../movie'
 export class FoundMoviesComponent implements OnInit {
 
   movies: Movie[];
+  genres: Genre[];
   idArray = new Array();
   total_results: number;
   total_pages: number;
-  page: number;
+  currentPage: number = 1;
   term: string;
-  language: string;
-  sort: number;
-
-  genres: Genre[];
   imagePath: string = 'http://image.tmdb.org/t/p/w500';
 
   @Input() movie:string;
@@ -37,17 +34,19 @@ export class FoundMoviesComponent implements OnInit {
     this.route.params.subscribe(
       params => {
         this.term = params['name'];
-        // this.page = 1;
         this.getMovie(this.term);
     });
     this.getGenres();
   }
 
-  getMovie(term:string){
-    this.movieService.searchMovie(term)
+  getMovie(term:string, page?: number){
+    this.movieService.searchMovie(term, page)
       .subscribe(result => {
-        this.movies = result;
-        console.log('Результаты в Поисковом элементе',this.movies);
+        this.movies = result['results'];
+        if(!page){
+          this.total_pages = result['total_pages'];
+          this.total_results = result['total_results'];
+        };
       }, error => console.log('error'));
   }
 
@@ -65,6 +64,7 @@ export class FoundMoviesComponent implements OnInit {
         console.log('All Genres', this.genres)
       });
   }
+
   addFavorite(id:string, title:string, poster:string){
     this.movieService.addToFavorites(id, title, poster);
     this.getFavorites()
@@ -74,15 +74,23 @@ export class FoundMoviesComponent implements OnInit {
     this.movieService.removeFromFavorites(id, title, poster)
     this.getFavorites();
   }
+
   getFavorites(){
     this.idArray = JSON.parse(localStorage.getItem('listOfIds')) || [];
   }
 
+  goNextOrPrevious(page:number){
+    this.currentPage += page;
+    this.getMovie(this.term,this.currentPage)
+  }
+  
+  goStartOrEnd(page:number){
+    this.currentPage = page;
+    this.getMovie(this.term,this.currentPage);
+  }
+  
   selectEmployeeFromList(e) {
     e.stopPropagation();
     e.preventDefault();
-    console.log("This onClick method should prevent routerLink from executing.");
-
-    return false;
-}
+  }
 }
