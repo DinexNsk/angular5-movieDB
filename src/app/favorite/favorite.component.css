@@ -1,20 +1,22 @@
+.container{
+  background-color:rgb(255, 136, 0);
+  margin-top:50px;
+}
 .movieList {
     margin-right: 80px;
     margin-left: 80px;
   }
-
-.movie{
-    border-radius: 10px;
-}  
 .movieImg {
     object-fit: fill;
     min-width: 100%;
     max-height: 100%;
+    border-radius: 10px;
   }
-.footer{
+.footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 0 0 10px 10px;
   }
 .movie{
     display:flex;
