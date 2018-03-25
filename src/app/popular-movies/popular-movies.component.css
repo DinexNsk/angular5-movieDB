@@ -1,12 +1,6 @@
-.movieList {
-    margin-right: 80px;
-    margin-left: 80px;
-}
-.movie{
-    border-radius: 10px;
-}
 .movie{
     cursor: pointer;
+    border-radius: 10px;
 } 
 img {
     object-fit: fill;
@@ -25,12 +19,12 @@ span.capitalise {
     padding: 0 5px;
     position: relative;
  }
- .movieList {
+.movieList {
     margin-right: 80px;
     margin-left: 80px;
     position: relative;
-  }
-  .movieList .glyphiconFalse {
+}
+.movieList .glyphiconFalse {
     position: absolute;
     cursor: pointer;
     border-width:2px;
