@@ -15,7 +15,7 @@ export class MovieService {
   private genres = `${this.adress}genre/movie/list?${this.API}&language=ru`;
 
   private popularUrl = `${this.adress}${this.popular_movie}${this.API}&language=ru`;
-  private searchUrl = `${this.adress}${this.search_movie}${this.API}&language=cn`;
+  private searchUrl = `${this.adress}${this.search_movie}${this.API}&language=ru`;
 
   constructor(private http: HttpClient) { }
 
