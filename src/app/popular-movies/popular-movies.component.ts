@@ -17,10 +17,10 @@ export class PopularMoviesComponent implements OnInit {
   movies: Movie[];
   genres:Genre[];
   idArray = new Array();
-  currentPage:number = 1;
+  currentPage: number = 1;
+  total_pages: number;
+  total_results: number;
   imagePath:string = 'http://image.tmdb.org/t/p/w500';
-  /** PAGINATION */
-  displayedColumns = ['title', 'id', 'popularity', 'release_date'];
 
   constructor(
     private movieService: MovieService,
@@ -28,42 +28,61 @@ export class PopularMoviesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getPopular(this.currentPage);
+    this.getPopular();
     this.getFavorites();
     this.getGenres();
   }
 
-  getPopular(page:number) {
+  getPopular(page?:number) {
     this.movieService.getPopularMovies(page)
       .subscribe((result) => {
-        this.movies = result;
-        console.log("Popular movies:",this.movies);
+        this.movies = result['results'];
+        /** to fix incorrect results */
+        if(!page){
+          this.total_pages = result['total_pages'];
+          this.total_results = result['total_results'];
+        }
       });
   }
+
   getGenres(){
     this.movieService.getGenreList()
       .subscribe((result) => {
         this.genres = result;
-        console.log('All Genres', this.genres)
       });
   }
+
   goDetail(id: number) {
     if (id) {
       this.router.navigate(['/movie', id]);
       window.scrollTo(0, 100);
     }
   }
+
   getFavorites(){
     this.idArray = JSON.parse(localStorage.getItem('listOfIds')) || [];
   }
+
   addFavorite(id:string, title:string, poster:string){
     this.movieService.addToFavorites(id, title, poster);
     this.getFavorites()
   }
+
   removeFavorites(id:string, title:string, poster:string){
     this.movieService.removeFromFavorites(id, title, poster)
     this.getFavorites();
   }
+
+  goNextOrPrevious(page:number){
+    this.currentPage += page;
+    this.getPopular(this.currentPage)
+  }
+  
+  goStartOrEnd(page:number){
+    this.currentPage = page;
+    this.getPopular(this.currentPage);
+  }
+
   selectEmployeeFromList(e) {
     e.stopPropagation();
     e.preventDefault();
