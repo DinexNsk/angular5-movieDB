@@ -54,9 +54,6 @@
     </div>
     <mat-card-actions class='footer'>
       <button mat-button (click)="goBack()">Назад</button>
-
-
-
       <ng-container *ngIf="!idArray.includes(details.id)">
         <button mat-button 
           (click)="addFavorite(details.id, details.title, details.poster_path)">
