@@ -27,8 +27,9 @@ export class MovieService {
     return this.http.get<Detail>(`${this.adress}movie/${id}?${this.API}&language=ru`)
   }
 
-  getSimilarMovies(id:number):Observable<Movie[]>{
-    return this.http.get<Movie[]>(`${this.adress}movie/${id}/similar?${this.API}&language=ru`)
+  getSimilarMovies(id:number, page:number):Observable<Movie[]>{
+    return this.http.get<Movie[]>(
+      `${this.adress}movie/${id}/similar?${this.API}&language=ru&page=${page}`)
   }
 
   searchMovie(term:string, page?:number): Observable<Movie[]> {
