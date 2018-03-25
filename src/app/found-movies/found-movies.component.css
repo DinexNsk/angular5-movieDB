@@ -1,7 +1,9 @@
 .movie{
     border-radius: 10px;
 }
-  
+.pagination{
+  margin-top:5x;
+}
 img {
     object-fit: fill;
     min-width: 100%;
