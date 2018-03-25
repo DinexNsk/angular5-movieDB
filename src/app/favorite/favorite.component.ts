@@ -29,6 +29,8 @@ export class FavoriteComponent implements OnInit {
   }
 
   removeFavorites(id:string, title:string, poster:string){
+    var ask = confirm(`Are you sure want to delete ${title}`);
+    if (!ask) return;
     this.movieService.removeFromFavorites(id, title, poster);
     this.movies = JSON.parse(localStorage.getItem('favorites')) || [];
   }
