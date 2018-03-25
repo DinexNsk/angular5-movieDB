@@ -15,11 +15,11 @@ export class MovieService {
   private genres = `${this.adress}genre/movie/list?${this.API}&language=ru`;
 
   private popularUrl = `${this.adress}${this.popular_movie}${this.API}&language=ru`;
-  private searchUrl = `${this.adress}${this.search_movie}${this.API}`;
+  private searchUrl = `${this.adress}${this.search_movie}${this.API}&language=cn`;
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovies(page:number):Observable<Movie[]>{
+  getPopularMovies(page?:number):Observable<Movie[]>{
     return this.http.get<Movie[]>(`${this.popularUrl}&page=${page}`)
   };
 
@@ -33,7 +33,6 @@ export class MovieService {
 
   searchMovie(term:string, page?:number): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.searchUrl}&query=${term}&page=${page}`)
-      .map(result => result['results'])
   };
 
   getGenreList(){
