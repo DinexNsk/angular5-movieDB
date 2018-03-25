@@ -19,9 +19,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovies(page?:number):Observable<Movie[]>{
+  getPopularMovies(page:number):Observable<Movie[]>{
     return this.http.get<Movie[]>(`${this.popularUrl}&page=${page}`)
-      .map(result => result['results'])
   };
 
   getDetails(id:number):Observable<Detail>{
