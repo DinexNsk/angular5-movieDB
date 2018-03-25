@@ -62,7 +62,7 @@ export class MovieDetailsComponent implements OnInit {
   goDetail(id: number) {
     if (id) {
       this.router.navigate(['/movie', id]);
-      window.scrollTo(0, 100);
+      window.scrollTo(0, 0);
     }
   }
   addFavorite(id:string, title:string, poster:string){
