@@ -4,8 +4,7 @@
           <mat-grid-tile *ngFor="let movie of movies" (click)='goDetail(movie[0])'>
             <img *ngIf="movie[2]" src="{{imagePath}}{{movie[2]}}">
             <img *ngIf="!movie[2]" src="https://placehold.it/500x740">     
-            <mat-icon
-            (click)="removeFavorites(movie[0], movie[1], movie[2], $event)">
+            <mat-icon (click)="removeFavorites(movie[0], movie[1], movie[2], $event)">
               star
             </mat-icon>
             <mat-grid-tile-footer class="footer">
