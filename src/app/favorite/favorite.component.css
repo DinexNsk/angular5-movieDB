@@ -3,32 +3,28 @@
   margin-top:50px;
 }
 .movieList {
-    margin-right: 80px;
-    margin-left: 80px;
-  }
-.movieImg {
-    object-fit: fill;
-    min-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-  }
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0 0 10px 10px;
-  }
-.movie{
-    display:flex;
-    position: relative;
-    border-radius: 10px;
-    flex:1;
-    margin-right: 40px;
+  display:flex;
+  flex:1;
+  margin-right: 80px;
+  margin-left: 80px;
+  position: relative;
 }
-.movie .glyphiconTrue {
-    position: absolute;
-    cursor: pointer;
-    top: 20px;
-    right: 0px;
-    color:rgb(255, 238, 0);
-  }
+.movieList img{
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 100%;
+  max-height: 100%;
+}
+.movieList mat-icon {
+  cursor: not-allowed;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  color:#ffee00;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 10px 10px;
+}
