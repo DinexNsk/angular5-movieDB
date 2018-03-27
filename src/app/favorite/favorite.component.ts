@@ -18,6 +18,7 @@ export class FavoriteComponent implements OnInit {
   constructor(
     private movieService: MovieService,
     private location: Location,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -27,8 +28,14 @@ export class FavoriteComponent implements OnInit {
   getFavorites(){
     this.movies = JSON.parse(localStorage.getItem('favorites')) || [];
   }
-
-  removeFavorites(id:string, title:string, poster:string){
+  goDetail(id: number) {
+    if (id) {
+      this.router.navigate(['/movie', id]);
+      window.scrollTo(0, 100);
+    }
+  }
+  removeFavorites(id:string, title:string, poster:string, event: MouseEvent){
+    event.stopPropagation();
     var ask = confirm(`Are you sure want to delete ${title}`);
     if (!ask) return;
     this.movieService.removeFromFavorites(id, title, poster);
