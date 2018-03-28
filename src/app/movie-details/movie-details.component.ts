@@ -65,12 +65,14 @@ export class MovieDetailsComponent implements OnInit {
       window.scrollTo(0, 0);
     }
   }
-  addFavorite(id:string, title:string, poster:string){
+  addFavorite(id:string, title:string, poster:string, event?: MouseEvent){
+    event.stopPropagation();
     this.movieService.addToFavorites(id, title, poster);
     this.getFavorites()
   }
 
-  removeFavorites(id:string, title:string, poster:string){
+  removeFavorites(id:string, title:string, poster:string, event?: MouseEvent){
+    event.stopPropagation()
     this.movieService.removeFromFavorites(id, title, poster)
     this.getFavorites();
   }
@@ -87,11 +89,4 @@ export class MovieDetailsComponent implements OnInit {
     this.currentPage = page;
     this.getSimilar(this.id, this.currentPage);
   }
-
-
-  selectEmployeeFromList(e) {
-    e.stopPropagation();
-    e.preventDefault();
-}
-
 }
