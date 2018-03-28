@@ -63,12 +63,14 @@ export class PopularMoviesComponent implements OnInit {
     this.idArray = JSON.parse(localStorage.getItem('listOfIds')) || [];
   }
 
-  addFavorite(id:string, title:string, poster:string){
+  addFavorite(id:string, title:string, poster:string, event: MouseEvent){
+    event.stopPropagation();
     this.movieService.addToFavorites(id, title, poster);
     this.getFavorites()
   }
 
-  removeFavorites(id:string, title:string, poster:string){
+  removeFavorites(id:string, title:string, poster:string, event: MouseEvent){
+    event.stopPropagation();
     this.movieService.removeFromFavorites(id, title, poster)
     this.getFavorites();
   }
@@ -81,11 +83,5 @@ export class PopularMoviesComponent implements OnInit {
   goStartOrEnd(page:number){
     this.currentPage = page;
     this.getPopular(this.currentPage);
-  }
-
-  selectEmployeeFromList(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    console.log("This onClick method should prevent routerLink from executing.");
   }
 }
