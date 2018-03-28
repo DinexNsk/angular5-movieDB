@@ -7,6 +7,7 @@
   <button (click)="search(searchBox.value)"> Искать </button>
   </div>
   <div class='itemsRight'>
+    <button (click)="goBack()">Назад<mat-icon>undo</mat-icon></button>
     <button [routerLink]="['/popular']"><mat-icon>home</mat-icon></button>
     <button [routerLink]="['/favorite']">Избранное <mat-icon>star</mat-icon></button>
     
