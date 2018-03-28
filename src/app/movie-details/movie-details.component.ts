@@ -66,13 +66,13 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
   addFavorite(id:string, title:string, poster:string, event?: MouseEvent){
-    event.stopPropagation();
+    if(event) event.stopPropagation();
     this.movieService.addToFavorites(id, title, poster);
     this.getFavorites()
   }
 
   removeFavorites(id:string, title:string, poster:string, event?: MouseEvent){
-    event.stopPropagation()
+    if(event) event.stopPropagation();
     this.movieService.removeFromFavorites(id, title, poster)
     this.getFavorites();
   }
