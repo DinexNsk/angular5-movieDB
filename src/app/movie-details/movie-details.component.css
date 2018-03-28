@@ -1,3 +1,4 @@
+/* detail consits of left and right parts */
 .container{
   margin-left:80px;
   margin-right:80px;
@@ -5,30 +6,12 @@
   display: flex;
   flex:1;
   border-radius: 10px;
-  flex-direction: column;
+  flex-direction: row;
   font-family: 'Times New Roman', Times, serif;
   background-color: rgba(248, 248, 248, 0.87);
 }
-.header{
-  display: flex;
-  margin-bottom: 20px;
-  flex-direction: column;
-}
-.title{
-  margin-bottom: 0;
-  text-align: center;
-}
-.subtitle{
-  width: auto;
-  text-align:center;
-}
-
-.detailContainer{
-  display: flex;
-  flex: 4;
-  flex-direction: row;
-}
-.imageLeft{
+/* left part */
+.detail_left{
   display:flex;
   position: relative;
   border-radius: 10px;
@@ -36,7 +19,10 @@
   flex:1;
   margin-right: 40px;
 }
-.imageLeft .glyphiconFalse {
+.detail_left img {
+  border-radius: 10px;
+}
+.detail_left .glyphiconFalse {
   position: absolute;
   cursor: pointer;
   border-width:2px;
@@ -47,45 +33,34 @@
   right: 0px;
   color:white;
 }
-.imageLeft .glyphiconTrue {
+.detail_left .glyphiconTrue {
   position: absolute;
   cursor: pointer;
   top: 20px;
   right: 0px;
   color:rgb(255, 238, 0);
 }
-
-.imageLeft img {
-  object-fit: fill;
-  background-size: cover;
-  border-radius: 10px;
-}
-.otherInfo{
+/* right part*/
+.detail_right{
   display:flex;
   flex:2;
   flex-direction: column;
 }
-.footer{
+mat-card-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.infoContainer{
-  display: flex;
+  margin-bottom: 20px;
   flex-direction: column;
 }
-
-.genreItems{
-  display: flex;
-  flex-direction: row; 
-  margin-bottom: 20px;
+.title{
+  margin-bottom: 0;
+  text-align: center;
 }
-.genres {
-  margin: 5px;
-  padding: 10px;
-  background-color: rgb(255, 157, 0);
+.subtitle{
+  text-align:center;
+}
+.detail_right_info{
   display: flex;
-  border-radius: 10px;
+  flex-direction: column;
 }
 .description{
   font-size: 20px;
@@ -94,13 +69,44 @@
 .otherDetails{
   font-size: 18px;
 }
-.inline{
+.otherDetails div{
   margin-bottom: 10px;
 }
-.inline span{
+.otherDetails span{
   color:rgb(3, 160, 29);
   font-size: 20px;
 }
+.genreItems{
+  display: flex;
+  flex-direction: row; 
+  margin-bottom: 20px;
+}
+.genreItems div {
+  display: flex;
+  margin: 5px;
+  padding: 10px;
+  background-color: rgb(255, 157, 0);
+  border-radius: 10px;
+}
+.detail_right_buttons{
+  display:flex;
+}
+detail_right_buttons a{
+  display: flex;
+  margin-right: 1000px;
+}
+.detail_right_buttons button{
+  margin-left: 10px;
+  color: white;
+}
+.button_green{
+  background-color: rgb(9, 136, 36);
+}
+.button_red {
+  background-color: rgb(255, 0, 0);
+}
+/* end of right part */
+
 .similarTitle{
   margin-bottom: 20px;
   margin-top: 30px;
