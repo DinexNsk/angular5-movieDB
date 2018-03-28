@@ -1,33 +1,20 @@
+.pagination{
+  margin-top:5x;
+  text-align: center;
+}
+.movieList {
+  margin-right: 80px;
+  margin-left: 80px;
+  position: relative;
+}
 .movie{
     border-radius: 10px;
 }
-.pagination{
-  margin-top:5x;
-}
-img {
-    object-fit: fill;
+.movie img{
     min-width: 100%;
     max-height: 100%;
-  }
-
-mat-grid-tile-footer.footer{
-    height: 64px;
-    overflow-x: auto;
 }
-span.capitalise {
-    text-transform: capitalize;    
-    display: inherit;
-    font-size: small;
-    color: white;
-    padding: 0 5px;
-    position: relative;
- }
- .movieList {
-    margin-right: 80px;
-    margin-left: 80px;
-    position: relative;
-  }
-  .movieList .glyphiconFalse {
+.movie .glyphiconFalse {
     position: absolute;
     cursor: pointer;
     border-width:2px;
@@ -37,11 +24,23 @@ span.capitalise {
     top: 20px;
     right: 10px;
     color:white;
-  }
-.movieList .glyphiconTrue {
+}
+.movie .glyphiconTrue {
     position: absolute;
     cursor: pointer;
     top: 20px;
     right: 10px;
     color:rgb(255, 238, 0);
   }
+mat-grid-tile-footer.footer{
+    height: 64px;
+    overflow-x: auto;
+}
+.footer div {
+    text-transform: capitalize;    
+    display: inherit;
+    font-size: small;
+    color: white;
+    padding: 0 5px;
+    position: relative;
+ }
