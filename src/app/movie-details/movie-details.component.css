@@ -50,13 +50,7 @@ mat-card-header {
   display: flex;
   margin-bottom: 20px;
   flex-direction: column;
-}
-.title{
-  margin-bottom: 0;
   text-align: center;
-}
-.subtitle{
-  text-align:center;
 }
 .detail_right_info{
   display: flex;
